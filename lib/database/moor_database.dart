@@ -18,7 +18,7 @@ LazyDatabase _openConnection() {
 
 @UseMoor(tables: [Notes], daos: [NoteDao])
 class MyMoorDatabase extends _$MyMoorDatabase {
-  MyMoorDatabase(QueryExecutor e) : super(_openConnection());
+  MyMoorDatabase() : super(_openConnection());
 
   @override
   int get schemaVersion => 1;
