@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moordatabase/edit_note_input_widget.dart';
 import 'package:moordatabase/model/dao/note_dao.dart';
 import 'package:moordatabase/new_note_input_widget.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,8 @@ class _HomePageState extends State<HomePage> {
         )
       ],
       child: ListTile(
-        title: Text(itemNote.description)
+        title: Text(itemNote.description),
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditNoteInput(note: itemNote)))
       ),
     );
   }
